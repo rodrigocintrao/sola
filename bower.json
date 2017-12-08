@@ -1,0 +1,25 @@
+{
+  "name": "ICCR - Capela Missional",
+  "homepage": "https://github.com/rodrigocintrao/iccr-capela-missional",
+  "authors": [
+    "rodrigo.cintrao <rodrigo.cintrao@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "bootstrap-sass": "^3.3.7"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
+}
