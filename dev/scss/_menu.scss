@@ -1,22 +1,76 @@
-.menu-mobile {
+.menu-mobile-active {
     display: block;
     cursor: pointer;
     color: $white-color;
     font-size: 16px;
     text-align: center;
     padding: ($number * 4) ($number * 6);
-    background-color: $dark;
+    &.active {
+        color: $darker;
+    }
 }
 
-.menu {
-    display: block;
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
+.menu-mobile {
     ul {
         margin: 0;
         padding: 0;
         text-align: center;
+        list-style-type: none;
+        a {
+            display: block;
+            color: $white-color;
+            padding: ($number * 4) ($number * 6);
+            font-size: 16px;
+            position: relative;
+            @include transition2(.2s);
+            &:before {
+                display: block;
+                content: "";
+                height: $number;
+                width: 0;
+                background-color: $darker;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                margin: 0 auto;
+                @include transition2(.2s);
+            }
+            &:hover {
+                text-decoration: none;
+                color: $darker;
+            }
+            &:hover:before {
+                width: 100%;
+                left: 0;
+            }
+        }
+        li.current-menu-item {
+            a {
+                text-decoration: none;
+                color: $darker;
+                &:before {
+                    display: block;
+                    content: "";
+                    height: $number;
+                    width: 100%;
+                    background-color: $darker;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    margin: 0 auto;
+                    @include transition2(.2s);
+                }
+            }
+        }
+    }
+}
+
+.menu {
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
         li {
             display: inline-block;
             a {
@@ -47,8 +101,23 @@
                     left: 0;
                 }
             }
-            @media screen and (max-width: 768px) {
-                display: block;
+        }
+        li.current-menu-item {
+            a {
+                text-decoration: none;
+                color: $darker;
+                &:before {
+                    display: block;
+                    content: "";
+                    height: $number;
+                    width: 100%;
+                    background-color: $darker;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    margin: 0 auto;
+                    @include transition2(.2s);
+                }
             }
         }
     }

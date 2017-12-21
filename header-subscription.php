@@ -24,12 +24,15 @@
             </div>
         </section>
         <nav class="nav text-uppercase">
-            <span class="menu-mobile hidden-md hidden-lg">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                <span class="text-uppercase">menu</span>
-            </span>
             <div class="container">
-                <div class="menu">
+                <span class="menu-mobile-active active hidden-md hidden-lg">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span class="text-uppercase">menu</span>
+                </span>
+                <div class="menu hidden-xs hidden-sm">
+                    <?php wp_nav_menu(array('menu'=>'menu')); ?>
+                </div>
+                <div class="menu-mobile hidden-md hidden-lg">
                     <?php wp_nav_menu(array('menu'=>'menu')); ?>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 $(function(){
-    var menuMobile = $('.menu-mobile');
+    var menuMobile = $('.menu-mobile-active');
 
     menuMobile.on('click', function(){
-        $('.menu').toggle();
+        $(this).toggleClass('active');
+        $('.menu-mobile').toggle();
     });
 });
