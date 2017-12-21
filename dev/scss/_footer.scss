@@ -1,0 +1,24 @@
+#footer {
+    background-color: $graylight-color;
+    background-image: url(./img/background-logo.png);
+    padding: ($number * 7) 0;
+    font-size: 16px;
+    .footer-map {
+        width: 100%;
+        height: 200px;
+        padding: $number;
+        border: $number solid $primary-color;
+        @media screen and (max-width: 768px) {
+            height: 150px;
+        }
+    }  
+    .support {
+        img {
+            border: $number solid $primary-color;
+            @include border-radius($number * 2);
+            &:hover {
+                border: $number solid $dark;
+            }
+        }
+    }  
+}

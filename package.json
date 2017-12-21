@@ -1,5 +1,5 @@
 {
-  "name": "joy-storm-pub",
+  "name": "sola",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodrigocintrao/joy-storm-pub.git"
+    "url": "git+https://github.com/rodrigocintrao/sola.git"
   },
   "author": "Rodrigo Cintrão",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rodrigocintrao/joy-storm-pub/issues"
+    "url": "https://github.com/rodrigocintrao/issues"
   },
-  "homepage": "https://github.com/rodrigocintrao/joy-storm-pub#readme",
+  "homepage": "https://github.com/rodrigocintrao/sola#readme",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "event-stream": "^3.3.4",

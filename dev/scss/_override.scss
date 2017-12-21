@@ -1,0 +1,27 @@
+body {
+    font-family: $font;
+    color: $dark-color;
+    font-size: 18px;
+    background-color: #fff;
+    @include font-smoothing();
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:hover, &:active, &:focus, &:active:focus {
+        background-color: $dark;
+        border-color: $dark;
+    }
+}
+
+a {
+    color: $primary-color;
+    &:hover {
+        color: $dark
+    }
+}
+
+strong {
+    color: $dark;
+}

@@ -1,0 +1,52 @@
+.logo {
+    background-color: $graylight-color;
+    background-image: url(./img/background-logo.png);
+}
+
+.nav {
+    background-color: $primary-color;
+}
+
+.slider {
+    background: url(img/background-slide.png) no-repeat center;
+    background-size: cover;
+    color: $white-color;
+    padding: ($number * 7) 0;
+    .container {
+        background-color: rgba(#000, .4);
+        padding-bottom: $number * 7;
+    }
+    h2 {
+        display: inline-block;
+        font-size: $number * 20;
+        margin: 0;
+        padding: $number * 7;
+        @media screen and (max-width: 768px) {
+            font-size: $number * 15;            
+        }
+    }
+    .eschatological-position {
+        font-size: $number * 14;
+        padding: $number * 7;
+    }
+    p {
+        font-size: 24px;
+        margin: 0;
+        padding: $number * 7;
+    }    
+}
+
+.speakers {
+    padding: ($number * 7) 0;    
+    .speakers-thumb {
+        img {
+            border: $number solid $primary-color;
+            padding: $number * 2;
+            @include border-radius(50%);
+        }
+    }
+}
+
+.pages {
+    padding: ($number * 7) 0;
+}

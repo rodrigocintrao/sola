@@ -1,8 +1,22 @@
 //plugins
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "../bower_components/font-awesome/scss/font-awesome";
-@import "../bower_components/slick-carousel/slick/slick.scss";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../bower_components/font-awesome/scss/font-awesome";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 
-body {
-  background-color: #000;
-}
+//variables
+@import "vars";
+
+//mixins
+@import "mixins";
+
+//style sheet
+@import "general";
+@import "override";
+@import "sections";
+@import "menu";
+@import "forms";
+@import "footer";
+
+
+

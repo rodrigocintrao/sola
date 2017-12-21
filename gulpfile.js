@@ -13,7 +13,7 @@ var reload      = browserSync.reload;
 var runSequence = require('run-sequence');
 
 gulp.task('images', function() {
-    gulp.src(['.dev/images/**/*.jpg','.dev/images/**/*.png'])
+    gulp.src(['./dev/images/**/*.jpg','./dev/images/**/*.png'])
         .pipe(changed('./img/'))
         .pipe(imagemin({
             progressive: true
@@ -27,38 +27,43 @@ gulp.task('clean', function(){
 });
 
 gulp.task('jshint', function(){
-  return gulp.src('.dev/scripts/**/*.js')
+  return gulp.src('./dev/scripts/**/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('uglify', function(){
+gulp.task('mergePlugins', function(){
   return es.merge([
-    gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'bower_components/slick-carousel/slick/slick.min.js']),
-    gulp.src('.dev/scripts/**/*.js').pipe(uglify())
+    gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'bower_components/slick-carousel/slick/slick.min.js'])
   ])
+  .pipe(concat('plugins.js'))
+  .pipe(gulp.dest('./js/'));
+});
+
+gulp.task('uglify', function(){
+  return gulp.src('./dev/scripts/**/*.js').pipe(uglify())
   .pipe(concat('main.js'))
   .pipe(gulp.dest('./js/'));
 });
 
 gulp.task('sass', function () {
-  return gulp.src('.dev/scss/**/*.scss')
+  return gulp.src('./dev/scss/**/*.scss')
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(gulp.dest('./'));
 });
 
 gulp.task('watch', function(){
-  return gulp.watch('.dev/scss/**/*.scss', ['sass']);
+  return gulp.watch(['./dev/scss/**/*.scss','./dev/scripts/**/*.js'], ['sass','uglify']);
 });
 
 gulp.task('serve', function () {
     var files = [
       './style.css',
       './**/*.php ',
-      './**/*.js'
+      './js/main.js'
     ];
     browserSync.init(files, {
-        proxy: 'http://localhost/joy-storm-pub',
+        proxy: 'http://localhost/sola',
         notify: false
     });
 
@@ -66,5 +71,5 @@ gulp.task('serve', function () {
 });
 
 gulp.task('default', function(cb){
-  return runSequence('clean', ['images','jshint','sass','watch','uglify','serve'], cb);
+  return runSequence('clean', ['images','jshint','mergePlugins','uglify','sass','watch','serve'], cb);
 });

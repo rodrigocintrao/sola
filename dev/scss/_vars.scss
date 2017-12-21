@@ -1,0 +1,14 @@
+$dark-color: #23282d;
+$white-color: #fff;
+$gray-color: #efeee5;
+$graylight-color: lighten($gray-color,5%);
+
+$primary-color: #eb893f;
+$light: lighten($primary-color,15%);
+$dark: darken($primary-color,15%);
+$lighter: lighten($primary-color,30%);
+$darker: darken($primary-color,30%);
+
+$number: 3px;
+
+$font: 'Open Sans', sans-serif;

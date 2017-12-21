@@ -1,0 +1,1 @@
+$(function(){$(".menu-mobile").on("click",function(){$(".menu").toggle()})});
